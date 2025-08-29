@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NeuroCoach - Платформа для коучей и психологов</title>
+    <title>Yavatar - Платформа для ИИ-аватаров</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
     <style>
@@ -216,6 +216,56 @@
             overflow: hidden;
             box-shadow: 0 3px 10px rgba(0,0,0,0.08);
         }
+        
+        .integration-card {
+            transition: all 0.3s;
+            border: 1px solid #dee2e6;
+        }
+        
+        .integration-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .deepseek-integration {
+            border: 2px dashed var(--primary);
+            border-radius: 1rem;
+            padding: 1.5rem;
+            text-align: center;
+            background: rgba(106, 17, 203, 0.05);
+        }
+        
+        .knowledge-file {
+            border: 1px solid #dee2e6;
+            border-radius: 0.5rem;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .knowledge-file:hover {
+            background: #f8f9fa;
+        }
+        
+        .progress {
+            height: 10px;
+            border-radius: 5px;
+        }
+        
+        .chart-container {
+            height: 300px;
+        }
+        
+        .user-avatar {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
@@ -223,7 +273,7 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
         <div class="container">
             <a class="navbar-brand" href="#" onclick="showPage('landing')">
-                <i class="bi bi-brain me-2"></i>NeuroCoach
+                <i class="bi bi-robot me-2"></i>Yavatar
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
@@ -350,8 +400,64 @@
             </div>
         </section>
 
+        <!-- Интеграции -->
+        <section class="py-5 bg-light">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold">Интеграции с популярными платформами</h2>
+                    <p class="text-muted">Подключите вашего ИИ-аватара к любимым мессенджерам</p>
+                </div>
+                <div class="row g-4">
+                    <div class="col-md-3">
+                        <div class="card integration-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="text-primary mb-3">
+                                    <i class="bi bi-telegram fs-1"></i>
+                                </div>
+                                <h5 class="card-title">Telegram</h5>
+                                <p class="card-text">Интеграция с Telegram-ботом</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card integration-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="text-primary mb-3">
+                                    <i class="bi bi-whatsapp fs-1"></i>
+                                </div>
+                                <h5 class="card-title">WhatsApp</h5>
+                                <p class="card-text">Подключение через WhatsApp Business API</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card integration-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="text-primary mb-3">
+                                    <i class="bi bi-vk fs-1"></i>
+                                </div>
+                                <h5 class="card-title">ВКонтакте</h5>
+                                <p class="card-text">Интеграция с сообществами ВКонтакте</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="card integration-card h-100">
+                            <div class="card-body text-center p-4">
+                                <div class="text-primary mb-3">
+                                    <i class="bi bi-globe fs-1"></i>
+                                </div>
+                                <h5 class="card-title">Веб-чат</h5>
+                                <p class="card-text">Виджет для вашего сайта</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Тарифы -->
-        <section id="pricing" class="py-5 bg-light">
+        <section id="pricing" class="py-5">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="display-5 fw-bold">Тарифные планы</h2>
@@ -421,7 +527,7 @@
         </section>
 
         <!-- Отзывы -->
-        <section id="testimonials" class="py-5">
+        <section id="testimonials" class="py-5 bg-light">
             <div class="container">
                 <div class="text-center mb-5">
                     <h2 class="display-5 fw-bold">Отзывы специалистов</h2>
@@ -440,7 +546,7 @@
                                         <small class="text-muted">Психолог</small>
                                     </div>
                                 </div>
-                                <p class="card-text">"NeuroCoach помог мне автоматизировать первичные консультации. ИИ-аватар экономит мне 5 часов в неделю!"</p>
+                                <p class="card-text">"Yavatar помог мне автоматизировать первичные консультации. ИИ-аватар экономит мне 5 часов в неделю!"</p>
                                 <div class="text-warning">
                                     <i class="bi bi-star-fill"></i>
                                     <i class="bi bi-star-fill"></i>
@@ -506,7 +612,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-lg-4 mb-4 mb-lg-0">
-                        <h4 class="mb-4">NeuroCoach</h4>
+                        <h4 class="mb-4">Yavatar</h4>
                         <p>Платформа для создания ИИ-ассистентов для коучей и психологов</p>
                         <div class="d-flex gap-3">
                             <a href="#" class="text-white"><i class="bi bi-telegram fs-4"></i></a>
@@ -535,7 +641,7 @@
                     <div class="col-lg-4">
                         <h5 class="mb-4">Контакты</h5>
                         <ul class="list-unstyled">
-                            <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@neurocoach.ru</li>
+                            <li class="mb-2"><i class="bi bi-envelope me-2"></i> info@yavatar.ru</li>
                             <li class="mb-2"><i class="bi bi-telephone me-2"></i> +7 (495) 123-45-67</li>
                             <li class="mb-2"><i class="bi bi-geo-alt me-2"></i> Москва, ул. Тверская, 1</li>
                         </ul>
@@ -543,7 +649,7 @@
                 </div>
                 <hr class="my-4 bg-light">
                 <div class="text-center">
-                    <p class="mb-0">&copy; 2023 NeuroCoach. Все права защищены.</p>
+                    <p class="mb-0">&copy; 2023 Yavatar. Все права защищены.</p>
                 </div>
             </div>
         </footer>
@@ -664,6 +770,7 @@
                             <a class="nav-link" href="#" onclick="showDashboardSection('knowledge')"><i class="bi bi-database me-2"></i>База знаний</a>
                             <a class="nav-link" href="#" onclick="showDashboardSection('consultations')"><i class="bi bi-chat-dots me-2"></i>Консультации</a>
                             <a class="nav-link" href="#" onclick="showDashboardSection('analytics')"><i class="bi bi-graph-up me-2"></i>Аналитика</a>
+                            <a class="nav-link" href="#" onclick="showDashboardSection('integrations')"><i class="bi bi-plug me-2"></i>Интеграции</a>
                             <a class="nav-link" href="#" onclick="showDashboardSection('settings')"><i class="bi bi-gear me-2"></i>Настройки</a>
                             <a class="nav-link" href="#" onclick="showPage('landing')"><i class="bi bi-box-arrow-right me-2"></i>Выход</a>
                         </nav>
@@ -907,13 +1014,14 @@
                                 <div class="card dashboard-card mt-3">
                                     <div class="card-body">
                                         <h5 class="card-title">Интеграция с DeepSeek</h5>
-                                        <p class="text-muted">Настройте подключение к API DeepSeek</p>
-                                        <div class="mb-3">
-                                            <label for="apiKey" class="form-label">API ключ</label>
-                                            <input type="password" class="form-control" id="apiKey" placeholder="Введите ваш API ключ">
-                                        </div>
-                                        <div class="d-grid">
-                                            <button class="btn btn-outline-primary">Подключить</button>
+                                        <div class="deepseek-integration">
+                                            <i class="bi bi-lightning-charge fs-1 mb-2"></i>
+                                            <p class="mb-2">Подключите API DeepSeek для повышения качества ответов</p>
+                                            <div class="mb-3">
+                                                <label for="apiKey" class="form-label">API ключ</label>
+                                                <input type="password" class="form-control" id="apiKey" placeholder="Введите ваш API ключ">
+                                            </div>
+                                            <button class="btn btn-primary">Подключить</button>
                                         </div>
                                     </div>
                                 </div>
@@ -1112,6 +1220,99 @@
                                             <button class="btn btn-warning">Переобучить</button>
                                             <button class="btn btn-danger">Удалить аватара</button>
                                         </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Интеграции -->
+                    <div id="dashboard-integrations" class="dashboard-section" style="display: none;">
+                        <div class="d-flex justify-content-between align-items-center mb-4">
+                            <h2>Интеграции</h2>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-md-6 mb-4">
+                                <div class="card dashboard-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Telegram</h5>
+                                        <p class="text-muted">Подключение через Telegram-бот</p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="form-check form-switch me-3">
+                                                <input class="form-check-input" type="checkbox" id="telegramSwitch">
+                                                <label class="form-check-label" for="telegramSwitch">Активировать</label>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm">Настроить</button>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Токен бота</label>
+                                            <input type="text" class="form-control" placeholder="Введите токен Telegram-бота">
+                                        </div>
+                                        <button class="btn btn-primary">Сохранить</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="card dashboard-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">WhatsApp</h5>
+                                        <p class="text-muted">Подключение через WhatsApp Business API</p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="form-check form-switch me-3">
+                                                <input class="form-check-input" type="checkbox" id="whatsappSwitch">
+                                                <label class="form-check-label" for="whatsappSwitch">Активировать</label>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm">Настроить</button>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Номер телефона</label>
+                                            <input type="text" class="form-control" placeholder="Введите номер WhatsApp">
+                                        </div>
+                                        <button class="btn btn-primary">Сохранить</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="card dashboard-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">ВКонтакте</h5>
+                                        <p class="text-muted">Интеграция с сообществами ВКонтакте</p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="form-check form-switch me-3">
+                                                <input class="form-check-input" type="checkbox" id="vkSwitch">
+                                                <label class="form-check-label" for="vkSwitch">Активировать</label>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm">Настроить</button>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">ID сообщества</label>
+                                            <input type="text" class="form-control" placeholder="Введите ID сообщества ВКонтакте">
+                                        </div>
+                                        <button class="btn btn-primary">Сохранить</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-md-6 mb-4">
+                                <div class="card dashboard-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">Веб-чат</h5>
+                                        <p class="text-muted">Виджет для вашего сайта</p>
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="form-check form-switch me-3">
+                                                <input class="form-check-input" type="checkbox" id="webchatSwitch" checked>
+                                                <label class="form-check-label" for="webchatSwitch">Активировать</label>
+                                            </div>
+                                            <button class="btn btn-outline-primary btn-sm">Настроить</button>
+                                        </div>
+                                        <div class="mb-3">
+                                            <label class="form-label">Код виджета</label>
+                                            <textarea class="form-control" rows="3" readonly><script src="https://yavatar.ru/widget.js" data-avatar="psychologist-assistant"></script></textarea>
+                                        </div>
+                                        <button class="btn btn-primary">Скопировать код</button>
                                     </div>
                                 </div>
                             </div>
@@ -1525,4 +1726,3 @@ Authorization: Bearer YOUR_API_KEY</pre>
     </script>
 </body>
 </html>
-
